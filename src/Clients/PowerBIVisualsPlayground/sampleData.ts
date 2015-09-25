@@ -68,5 +68,17 @@ module powerbi.visuals.sampleData {
         public static getDataViewsBySampleName(sampleName: string) {
             return this.data.filter((item) => (item.getName() === sampleName))[0];
         } 
-    }     
+
+        public static LoadAsyncData() {
+
+            sampleDataViews.OeData.LoadAsync()
+                .then(oeData => SampleData.data.push(oeData))
+                .fail(err => {
+                    console.log('Failed to load OE data view');
+                    throw err;
+                });
+        }
+    }
+
+    SampleData.LoadAsyncData();
 }
