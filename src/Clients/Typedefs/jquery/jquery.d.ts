@@ -354,6 +354,15 @@ interface JQueryPromise<T> {
     pipe(doneFilter?: (x: any) => any, failFilter?: (x: any) => any, progressFilter?: (x: any) => any): JQueryPromise<any>;
 
     /**
+    * Add handlers to be called when the Deferred object is resolved, rejected, or still in progress.
+    * 
+    * @param doneFilter A function that is called when the Deferred is resolved.
+    * @param failFilter An optional function that is called when the Deferred is rejected.
+    * @param progressFilter An optional function that is called when progress notifications are sent to the Deferred.
+    */
+    then<U>(doneFilter: (value: T) => JQueryPromise<U>, failFilter?: (...reasons: any[]) => U, progressFilter?: (...progression: any[]) => any): JQueryPromise<U>;
+
+    /**
      * Add handlers to be called when the Deferred object is resolved, rejected, or still in progress.
      * 
      * @param doneFilter A function that is called when the Deferred is resolved.

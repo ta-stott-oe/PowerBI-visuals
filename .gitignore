@@ -46,3 +46,4 @@ VisualsTests
 # Obj dirs
 src/Clients/**/obj/*.*
 /src/Clients/Externals/ThirdPartyIP/jqueryui
+/src/Clients/PowerBIVisualsPlayground/sampleDataViews/OeDataConfig.ts

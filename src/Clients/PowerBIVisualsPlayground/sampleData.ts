@@ -71,8 +71,16 @@ module powerbi.visuals.sampleData {
 
         public static LoadAsyncData() {
 
-            sampleDataViews.OeData.LoadAsync()
-                .then(oeData => SampleData.data.push(oeData))
+            sampleDataViews.GetOeDataSingleForecast()
+                .then(data => {
+                    SampleData.data.push(new sampleDataViews.OeData(data));
+                    SampleData.data.push(new sampleDataViews.OeDataTime(data));
+
+                    return sampleDataViews.GetOeDataScenarios();
+                })
+                .then(scenarioData => {
+                    SampleData.data.push(new sampleDataViews.OeDataScenario(scenarioData));
+                })
                 .fail(err => {
                     console.log('Failed to load OE data view');
                     throw err;

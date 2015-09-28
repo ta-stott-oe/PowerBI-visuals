@@ -41,7 +41,10 @@
 /// <reference path="sampleDataViews/SimpleTableData.ts"/>
 /// <reference path="sampleDataViews/TeamScoreData.ts"/>
 /// <reference path="sampleDataViews/calenderData.ts"/>
-/// <reference path="sampleDataViews/OeData.ts" />
+/// <reference path="sampleDataViews/oeData.ts" />
+/// <reference path="sampleDataViews/OeDataCountries.ts" />
+/// <reference path="sampleDataViews/OeDataTime.ts" />
+/// <reference path="sampleDataViews/OeDataScenario.ts" />
 
 /// <reference path="sampleData.ts"/>
 /// <reference path="hostControls.ts"/>
